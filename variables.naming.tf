@@ -41,6 +41,12 @@ variable "hub_vnet_custom_name" {
   default     = null
 }
 
+variable "hub_vwan_custom_name" {
+  description = "The name of the custom virtual WAN to create. If not set, the name will be generated using the 'name_prefix' and 'name_suffix' variables. If set, the 'name_prefix' and 'name_suffix' variables will be ignored."
+  type        = string
+  default     = null
+}
+
 variable "hub_firewall_custom_name" {
   description = "The name of the custom virtual network firewall to create. If not set, the name will be generated using the 'name_prefix' and 'name_suffix' variables. If set, the 'name_prefix' and 'name_suffix' variables will be ignored."
   type        = string

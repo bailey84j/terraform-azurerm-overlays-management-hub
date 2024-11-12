@@ -30,7 +30,7 @@ module "mod_vnet_diagnostic_settings" {
   workload_name      = format("sendToLogAnalytics_%s_vnet", var.workload_name)
 
 
-  resource_id           = module.hub_vnet.resource_id
+  resource_id           = module.hub_vnet[0].resource_id
   logs_destinations_ids = [var.existing_log_analytics_workspace_resource_id, module.hub_st.resource.id]
 }
 

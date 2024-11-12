@@ -6,7 +6,7 @@
 ###########################
 
 # The prefixes to use for all resources in this deployment
-org_name           = "trpqual"   # This Prefix will be used on most deployed resources.  10 Characters max.
+org_name           = "an1"   # This Prefix will be used on most deployed resources.  10 Characters max.
 deploy_environment = "dev"    # dev | test | prod
 environment        = "public" # public | usgovernment
 
@@ -23,8 +23,6 @@ enable_traffic_analytics = true
 ################################
 # Landing Zone Configuration  ##
 ################################
-
-vnet_vs_vwan = "vwan"
 
 #######################################
 # 01 Management Hub Virtual Network  ##
@@ -53,6 +51,8 @@ create_ddos_plan = true
 # If you do not want to create Customer Managed Keys,
 # set enable_customer_managed_key to false.
 enable_customer_managed_key = false
+
+
 
 # (Required) Hub Subnets
 # Default Subnets, Service Endpoints

@@ -16,6 +16,16 @@ data "azurenoopsutils_resource_name" "vnet" {
   separator     = "-"
 }
 
+data "azurenoopsutils_resource_name" "vwan" {
+  name          = var.workload_name
+  resource_type = "azurerm_virtual_wan"
+  prefixes      = [var.org_name, var.use_location_short_name ? module.mod_azregions.location_short : module.mod_azregions.location_cli]
+  suffixes      = compact([var.name_prefix == "" ? null : local.name_prefix, var.deploy_environment, local.name_suffix, var.use_naming ? "" : "vwan"])
+  use_slug      = var.use_naming
+  clean_input   = true
+  separator     = "-"
+}
+
 data "azurenoopsutils_resource_name" "firewall" {
   name          = var.workload_name
   resource_type = "azurerm_firewall"

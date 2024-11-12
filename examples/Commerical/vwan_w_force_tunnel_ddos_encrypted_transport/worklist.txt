@@ -1,0 +1,23 @@
+[33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mReference to undefined provider[0m
+[33m│[0m [0m
+[33m│[0m [0m[0m  on main.tf line 10, in module "mod_vnet_hub":
+[33m│[0m [0m  10:     [4mazurerm[0m.connectivity = azurerm[0m
+[33m│[0m [0m
+[33m│[0m [0mThere is no explicit declaration for local provider name
+[33m│[0m [0m"azurerm.connectivity" in module.mod_vnet_hub, so Terraform is assuming you
+[33m│[0m [0mmean to pass a configuration for "hashicorp/azurerm".
+[33m│[0m [0m
+[33m│[0m [0mIf you also control the child module, add a required_providers entry named
+[33m│[0m [0m"azurerm.connectivity" with the source address "hashicorp/azurerm".
+[33m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mDuplicate local value definition[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on ../../../modules/connectivity/locals.tf line 19, in locals:
+[31m│[0m [0m  19:   [4mlocation                                        = lower(var.location)[0m[0m
+[31m│[0m [0m
+[31m│[0m [0mA local value named "location" was already defined at
+[31m│[0m [0m../../../modules/connectivity/locals.naming.tf:14,3-149. Local value names
+[31m│[0m [0mmust be unique within a module.
+[31m╵[0m[0m

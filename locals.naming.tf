@@ -9,6 +9,8 @@ locals {
   resource_group_name          = element(coalescelist(data.azurerm_resource_group.rgrp[*].name, module.mod_scaffold_rg[*].resource_group_name, [""]), 0)
   location                     = element(coalescelist(data.azurerm_resource_group.rgrp[*].location, module.mod_scaffold_rg[*].resource_group_location, [""]), 0)
   hub_vnet_name                = coalesce(var.hub_vnet_custom_name, data.azurenoopsutils_resource_name.vnet.result)
+  hub_vwan_name                = coalesce(var.hub_vwan_custom_name, data.azurenoopsutils_resource_name.vwan.result)
+  #hub_vhub_name                = coalesce(var.hub_vwan_custom_name, data.azurenoopsutils_resource_name.vhub.result)
   hub_firewall_name            = coalesce(var.hub_firewall_custom_name, data.azurenoopsutils_resource_name.firewall.result)
   hub_firewall_policy_name     = coalesce(var.hub_firewall_policy_custom_name, data.azurenoopsutils_resource_name.firewall_policy.result)
   hub_firewall_client_pip_name = coalesce(var.hub_firewall_client_pip_custom_name, data.azurenoopsutils_resource_name.firewall_client_pub_ip.result)

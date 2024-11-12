@@ -21,7 +21,7 @@ module "firewall_client_snet" {
 
   # Virtual Networks
   virtual_network = {
-    resource_id = module.hub_vnet.resource_id
+    resource_id = module.hub_vnet[0].resource_id
   }
 
   # Subnet Information
@@ -45,7 +45,7 @@ module "firewall_management_snet" {
 
   # Virtual Networks
   virtual_network = {
-    resource_id = module.hub_vnet.resource_id
+    resource_id = module.hub_vnet[0].resource_id
   }
 
   # Subnet Information

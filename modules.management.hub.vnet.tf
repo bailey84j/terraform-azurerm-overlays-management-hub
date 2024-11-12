@@ -13,6 +13,7 @@ AUTHOR/S: jrspinella
 module "hub_vnet" {
   source  = "azure/avm-res-network-virtualnetwork/azurerm"
   version = "0.4.2"
+  count = local.vnet_enabled ? 1 : 0
 
   # Resource Group
   name                = local.hub_vnet_name

@@ -6,6 +6,10 @@ module "mod_vnet_hub" {
   #version = "x.x.x"
   source = "../../.."
 
+  providers = {
+    azurerm.connectivity = azurerm
+  }
+
   #depends_on = [ azurerm_log_analytics_workspace.laws ]
 
   ################################
@@ -40,7 +44,7 @@ module "mod_vnet_hub" {
   # Default Subnets, Service Endpoints
   # This is the default subnet with required configuration, check README.md for more details
   # subnet name will be set as per Azure NoOps naming convention by default. expected value here is: <App or project name>
-  hub_subnets = var.hub_subnets
+  hub_subnets = {}
 
   # (Required) Log Analytics Workspace for Network Diagnostic Settings & Traffic Analytics
   existing_log_analytics_workspace_resource_id = azurerm_resource_group.laws_rg.id
